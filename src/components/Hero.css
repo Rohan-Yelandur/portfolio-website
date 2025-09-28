@@ -1,0 +1,162 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--light-sage) 100%);
+  padding-top: 70px; /* Account for fixed navbar */
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-image {
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid var(--white);
+  box-shadow: 0 10px 30px var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.hero-text {
+  margin-bottom: 2.5rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--warm-brown);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--warm-brown);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 90px;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+}

@@ -1,0 +1,116 @@
+.about {
+  background-color: var(--white);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-paragraph {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.about-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.skills {
+  background-color: var(--light-sage);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px var(--shadow);
+}
+
+.skills-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.skill-category {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--warm-brown);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-list li {
+  padding: 0.4rem 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skill-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+  }
+  
+  .skills {
+    padding: 2rem;
+  }
+  
+  .skills-grid {
+    gap: 1.5rem;
+  }
+  
+  .skill-category {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  
+  .skills {
+    padding: 1.5rem;
+  }
+  
+  .skill-category {
+    padding: 1rem;
+  }
+}
