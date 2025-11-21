@@ -9,7 +9,7 @@ import {
   TASKBAR_HEIGHT 
 } from '../../utils/constants';
 
-const Window = ({ appId, title, children, onClose, onFocus, onMinimize, onMaximize, position, size, zIndex, isMinimized, isMaximized }) => {
+const Window = ({ appId, title, children, onClose, onFocus, onMinimize, onMaximize, position, size, zIndex, isMinimized, isMaximized, externalUrl }) => {
   const windowRef = useRef(null);
   const { updateWindowPosition, updateWindowSize } = useDesktop();
   
@@ -115,6 +115,15 @@ const Window = ({ appId, title, children, onClose, onFocus, onMinimize, onMaximi
       >
         <span className="window-title">{title}</span>
         <div className="window-controls">
+          {externalUrl && (
+            <button 
+              className="window-button external-link" 
+              onClick={() => window.open(externalUrl, '_blank', 'noopener,noreferrer')}
+              title="Open in new tab"
+            >
+              ↗
+            </button>
+          )}
           <button className="window-button minimize" onClick={onMinimize}>−</button>
           <button className="window-button maximize" onClick={onMaximize}>
             {isMaximized ? '❐' : '□'}

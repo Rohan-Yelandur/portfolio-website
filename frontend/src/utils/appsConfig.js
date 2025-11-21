@@ -1,7 +1,10 @@
 import AboutContent from '../apps/About/AboutContent';
 import SkillsContent from '../apps/Skills/SkillsContent';
-import ProjectsContent from '../apps/Projects/ProjectsContent';
 import ExperienceContent from '../apps/Experience/ExperienceContent';
+import OpenBackersContent from '../apps/OpenBackers/OpenBackersContent';
+import VibeathonContent from '../apps/Vibeathon/VibeathonContent';
+import ChatbotContent from '../apps/Chatbot/ChatbotContent';
+import BrowserContent from '../apps/Browser/BrowserContent';
 
 export const APPS = [
   { 
@@ -17,16 +20,36 @@ export const APPS = [
     component: SkillsContent 
   },
   { 
-    id: 'projects', 
-    title: 'Projects', 
-    icon: '💼',
-    component: ProjectsContent 
+    id: 'openbackers', 
+    title: 'OpenBackers', 
+    icon: '🌐',
+    component: OpenBackersContent,
+    externalUrl: 'https://openbackers.vercel.app/'
+  },
+  { 
+    id: 'vibeathon', 
+    title: 'Vibeathon', 
+    icon: '🎵',
+    component: VibeathonContent,
+    externalUrl: 'https://tvg-vibeathon.vercel.app/'
   },
   { 
     id: 'experience', 
     title: 'Experience', 
     icon: '🎯',
     component: ExperienceContent 
+  },
+  { 
+    id: 'chatbot', 
+    title: 'AI Chatbot', 
+    icon: '🤖',
+    component: ChatbotContent 
+  },
+  { 
+    id: 'browser', 
+    title: 'Browser', 
+    icon: '🌐',
+    component: BrowserContent 
   },
   { 
     id: 'linkedin', 

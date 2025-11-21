@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { 
   DEFAULT_WINDOW_WIDTH, 
   DEFAULT_WINDOW_HEIGHT, 
@@ -125,6 +125,35 @@ export const DesktopProvider = ({ children }) => {
       ...prev,
       [appId]: { ...prev[appId], size }
     }));
+  }, []);
+
+  // Handle viewport resize - update maximized windows
+  useEffect(() => {
+    const handleResize = () => {
+      setWindows(prev => {
+        const updated = { ...prev };
+        let hasChanges = false;
+
+        Object.keys(updated).forEach(appId => {
+          const window = updated[appId];
+          if (window.isMaximized && window.isOpen) {
+            const viewportWidth = global.innerWidth || 1920;
+            const viewportHeight = global.innerHeight || 1080;
+            updated[appId] = {
+              ...window,
+              position: { x: 0, y: 0 },
+              size: { width: viewportWidth, height: viewportHeight - TASKBAR_HEIGHT }
+            };
+            hasChanges = true;
+          }
+        });
+
+        return hasChanges ? updated : prev;
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const value = {

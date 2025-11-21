@@ -55,6 +55,7 @@ const Desktop = () => {
               zIndex={windowState.z}
               isMinimized={windowState.isMinimized}
               isMaximized={windowState.isMaximized}
+              externalUrl={app.externalUrl}
               onClose={() => closeWindow(app.id)}
               onFocus={() => focusWindow(app.id)}
               onMinimize={() => minimizeWindow(app.id)}

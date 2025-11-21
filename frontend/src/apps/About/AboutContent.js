@@ -3,25 +3,60 @@ import './AboutContent.css';
 
 const AboutContent = () => {
   return (
-    <div className="app-content">
-      <h2>About Me</h2>
-      <div className="about-section">
-        <p>
-          Welcome to my portfolio! I'm a passionate developer with expertise in 
-          building modern web applications.
-        </p>
-        <p>
-          I specialize in creating intuitive user interfaces and robust backend systems. 
-          My goal is to craft solutions that are both functional and aesthetically pleasing.
-        </p>
-        <div className="about-details">
-          <h3>Contact Information</h3>
-          <ul>
-            <li><strong>Email:</strong> your.email@example.com</li>
-            <li><strong>Location:</strong> Your City, Country</li>
-            <li><strong>GitHub:</strong> github.com/yourusername</li>
-            <li><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</li>
-          </ul>
+    <div className="tinder-card">
+      <div className="tinder-image">
+        <img 
+          src="/profile_picture.jpg" 
+          alt="Rohan Yelandur" 
+          className="profile-photo"
+        />
+      </div>
+      
+      <div className="tinder-info">
+        <div className="name-age">
+          <h1>Rohan Yelandur</h1>
+          <span className="age">19</span>
+        </div>
+        
+        <div className="location-info">
+          <div className="info-item">
+            <span className="icon">🎓</span>
+            <span>Studying at UT Austin</span>
+          </div>
+          <div className="info-item">
+            <span className="icon">📍</span>
+            <span>Austin, Texas</span>
+          </div>
+        </div>
+        
+        <div className="looking-for">
+          <span className="icon">💼</span>
+          <span>Looking for exciting opportunities</span>
+        </div>
+        
+        <div className="about-me-section">
+          <h3>About me</h3>
+          <p>
+            CS student @ UT Austin passionate about building innovative software. 
+            From full-stack development to AI/ML and robotics, I love creating 
+            scalable solutions that make an impact.
+          </p>
+          <p>
+            When I'm not coding, you'll find me at the gym, hiking outdoors, 
+            or playing basketball.
+          </p>
+        </div>
+        
+        <div className="interests-section">
+          <h3>Interests</h3>
+          <div className="interest-tags">
+            <span className="tag">Software Engineering</span>
+            <span className="tag">AI & Robotics</span>
+            <span className="tag">Web3</span>
+            <span className="tag">Fitness</span>
+            <span className="tag">Basketball</span>
+            <span className="tag">Hiking</span>
+          </div>
         </div>
       </div>
     </div>

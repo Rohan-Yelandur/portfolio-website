@@ -33,8 +33,15 @@ const Icon = ({ app, onDoubleClick, position, onDragEnd, gridSize = 96 }) => {
     const snappedX = Math.round(currentPos.x / gridSize) * gridSize;
     const snappedY = Math.round(currentPos.y / gridSize) * gridSize;
 
-    // Call onDragEnd with snapped position
-    const success = onDragEnd(app.id, { x: snappedX, y: snappedY });
+    // Constrain to viewport (prevent going off-screen)
+    const maxX = Math.floor((window.innerWidth - 96) / gridSize) * gridSize;
+    const maxY = Math.floor((window.innerHeight - 48 - 96) / gridSize) * gridSize; // 48 for taskbar, 96 for icon height
+    
+    const constrainedX = Math.max(0, Math.min(snappedX, maxX));
+    const constrainedY = Math.max(0, Math.min(snappedY, maxY));
+
+    // Call onDragEnd with constrained and snapped position
+    const success = onDragEnd(app.id, { x: constrainedX, y: constrainedY });
     
     if (!success) {
       // Drag was cancelled (overlap detected), revert to original position

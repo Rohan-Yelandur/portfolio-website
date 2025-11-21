@@ -82,11 +82,27 @@
   border-color: #c00;
 }
 
+.window-button.external-link {
+  color: #0078d4;
+  font-size: 18px;
+}
+
+.window-button.external-link:hover {
+  background: #0078d4;
+  color: #fff;
+  border-color: #005a9e;
+}
+
 .window-content {
   flex: 1;
   overflow: auto;
   padding: 16px;
   background-color: #fff;
+}
+
+.window-content:has(.iframe-content) {
+  padding: 0;
+  overflow: hidden;
 }
 
 .window-resize-handle {
