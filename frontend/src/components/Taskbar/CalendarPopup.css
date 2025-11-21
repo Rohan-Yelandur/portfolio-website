@@ -1,0 +1,35 @@
+.calendar-popup {
+  position: absolute;
+  bottom: 56px;
+  right: 0;
+  width: 320px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.calendar-header {
+  margin-bottom: 16px;
+}
+
+.calendar-month {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.calendar-full-date {
+  font-size: 13px;
+  color: #666;
+}
+
+.calendar-time-large {
+  font-size: 48px;
+  font-weight: 300;
+  color: #333;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
+}

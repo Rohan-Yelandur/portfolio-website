@@ -1,0 +1,104 @@
+.window {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.1s ease-out;
+}
+
+.window-maximized {
+  border-radius: 0 !important;
+  transition: none;
+}
+
+.window-maximized .window-titlebar {
+  background: linear-gradient(to bottom, #f0f0f0, #d8d8d8);
+}
+
+.window-maximized .window-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.window-titlebar {
+  background: linear-gradient(to bottom, #f0f0f0, #d8d8d8);
+  border-bottom: 1px solid #999;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+  height: 32px;
+}
+
+.window-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.window-button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #fff, #e0e0e0);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.window-button:hover {
+  background: linear-gradient(to bottom, #f8f8f8, #d0d0d0);
+}
+
+.window-button:active {
+  background: linear-gradient(to bottom, #d0d0d0, #c0c0c0);
+}
+
+.window-button.close {
+  color: #d00;
+}
+
+.window-button.close:hover {
+  background: #e81123;
+  color: #fff;
+  border-color: #c00;
+}
+
+.window-content {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  background-color: #fff;
+}
+
+.window-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  background: linear-gradient(135deg, transparent 50%, #999 50%);
+}
+
+.window-resize-handle:hover {
+  background: linear-gradient(135deg, transparent 50%, #666 50%);
+}

@@ -1,0 +1,28 @@
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skill-category h3 {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-left: 4px solid #5A9FD4;
+  padding-left: 12px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background-color: #5A9FD4;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
