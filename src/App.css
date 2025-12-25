@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #f0f7f4;
+    /* Light mint/beige base */
+    --bg-gradient: linear-gradient(135deg, #f0f7f4 0%, #f9fbe7 100%);
+    --text-color: #1a3a3a;
+    /* Dark teal/forest green */
+    --text-muted: #5c7272;
+    --primary-color: #2d5a5a;
+    --accent-color: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: rgba(26, 58, 58, 0.1);
+    --max-content-width: 1100px;
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c8d6d6;
+    border-radius: 10px;
+    border: 3px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aababa;
+}
+
+.App {
+    min-height: 100vh;
+}
+
+section {
+    padding: 100px 20px;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text-gradient {
+    color: var(--primary-color);
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--text-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: #f8fcf8;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,155 @@
+.about {
+    padding: 120px 20px;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+}
+
+.big-text {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.sub-text {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.outside-work {
+    margin-top: 60px;
+}
+
+.sub-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.extra-info {
+    position: relative;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    padding-left: 25px;
+    line-height: 1.5;
+}
+
+.extra-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.inline-link {
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 4px;
+    transition: var(--transition-smooth);
+}
+
+.inline-link:hover {
+    color: var(--primary-color);
+    text-decoration-color: var(--text-color);
+}
+
+.exp-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.exp-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.exp-role {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.exp-company {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.hookem {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.hookem:hover {
+    transform: scale(1.4);
+    animation: wiggle 0.5s infinite linear;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: scale(1.4) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.4) rotate(15deg);
+    }
+
+    50% {
+        transform: scale(1.4) rotate(0deg);
+    }
+
+    75% {
+        transform: scale(1.4) rotate(-15deg);
+    }
+
+    100% {
+        transform: scale(1.4) rotate(0deg);
+    }
+}
+
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .big-text {
+        font-size: 1.8rem;
+    }
+
+    .outside-work {
+        margin-top: 40px;
+    }
+}

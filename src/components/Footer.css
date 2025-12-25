@@ -1,0 +1,93 @@
+.footer {
+    padding: 120px 20px 60px;
+    background: transparent;
+}
+
+.footer-container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+.footer-title .underline {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+}
+
+.footer-links {
+    margin-bottom: 80px;
+}
+
+.email-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    transition: var(--transition-smooth);
+}
+
+.footer-icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.email-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-icon-img {
+    font-size: 2.5rem;
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+}
+
+.social-links a:hover .social-icon-img {
+    transform: scale(1.1) translateY(-5px);
+}
+
+.social-links a.linkedin:hover .social-icon-img {
+    color: #0077B5;
+}
+
+.social-links a.github:hover .social-icon-img {
+    color: #000000;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .email-link {
+        font-size: 1.2rem;
+    }
+
+    .footer-icon {
+        font-size: 1.2rem;
+    }
+
+    .social-icon-img {
+        font-size: 2rem;
+    }
+}
