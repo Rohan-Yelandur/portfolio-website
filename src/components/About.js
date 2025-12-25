@@ -26,10 +26,11 @@ const About = () => {
       <div className="about-grid">
         <div className="about-left">
           <p className="big-text">
-            I'm a Computer Science student at UT Austin <span className="hookem" onClick={() => console.log('Hookem clicked!')}>🤘</span> with a focus on AI and robotics.
+            I'm currently studying Computer Science at UT Austin <span className="hookem" onClick={() => console.log('Hookem clicked!')}>🤘</span>
           </p>
           <p className="sub-text">
-            Currently researching task planning and failure mode diagnosis at the UT Austin Robotics Lab. I enjoy building things that bridge the gap between software and the physical world.
+            I conduct reserach on robot learning in the Texas Robotics lab. I frequently
+            compete in hackathons 
           </p>
 
           <div className="outside-work">
@@ -45,6 +46,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-right">
+          <h3 className="sub-heading">Work Experience</h3>
           <div className="experience-list">
             {experiences.map((exp, index) => (
               <div key={index} className="exp-item">

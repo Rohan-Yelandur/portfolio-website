@@ -29,8 +29,16 @@
     transition: var(--transition-smooth);
 }
 
+/* ZipReader image adjustment */
+.project-card:nth-child(4) img {
+    object-fit: contain;
+    object-position: center;
+    padding: 0rem;
+    background: #f6f8ff;
+}
+
 .project-card:hover .project-image-box img {
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 .project-title {

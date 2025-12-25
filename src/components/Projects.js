@@ -5,27 +5,27 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "AR Instruments",
-      description: "An augmented-reality platform for playing instruments in the browser.",
-      image: "https://via.placeholder.com/600x450/e8f5e9/1a3a3a?text=AR+Project"
+      title: "AR Musical Instrument Platform",
+      description: "An augmented-reality platform for playing and learning instruments in the browser.",
+      image: "/images/harmonium_thumbnail.PNG"
     },
     {
       id: 2,
       title: "AI Math Tutor",
-      description: "Generating animated lessons via LLMs and multi-threaded processing.",
-      image: "https://via.placeholder.com/600x450/f9fbe7/1a3a3a?text=AI+Tutor"
+      description: "A custom video generation pipeline to create animated and narrated math lessons.",
+      image: "/images/manim-ai_thumbnail.PNG"
     },
     {
       id: 3,
       title: "Memory Allocator",
-      description: "Custom malloc and free implementations optimized for speed.",
-      image: "https://via.placeholder.com/600x450/d2e0db/1a3a3a?text=C+Project"
+      description: "Custom malloc and free implementations optimized for speed and memory efficiency.",
+      image: "/images/memory-allocator_thumbnail.PNG"
     },
     {
       id: 4,
-      title: "Web3 Funding",
-      description: "Ethereum crowdfunding application with Solidity smart contracts.",
-      image: "https://via.placeholder.com/600x450/f1f8e9/1a3a3a?text=Web3+Project"
+      title: "ZipReader",
+      description: "App to make reading books and notes 2x faster.",
+      image: "/images/zipreader_thumbnail.PNG"
     }
   ];
 
