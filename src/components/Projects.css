@@ -8,9 +8,6 @@
     gap: 40px;
 }
 
-.project-card {
-    transition: var(--transition-smooth);
-}
 
 .project-image-box {
     width: 100%;
@@ -20,6 +17,7 @@
     margin-bottom: 24px;
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
 }
 
 .project-image-box img {
@@ -29,16 +27,48 @@
     transition: var(--transition-smooth);
 }
 
-/* ZipReader image adjustment */
-.project-card:nth-child(4) img {
-    object-fit: contain;
-    object-position: center;
-    padding: 0rem;
-    background: #f6f8ff;
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(2px);
 }
 
-.project-card:hover .project-image-box img {
+.project-overlay span {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: 2px solid white;
+    border-radius: 50px;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-image-box:hover img {
     transform: scale(1.07);
+}
+
+.project-image-box:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-image-box:hover .project-overlay span {
+    transform: translateY(0);
 }
 
 .project-title {

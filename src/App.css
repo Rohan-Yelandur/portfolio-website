@@ -8,6 +8,7 @@
     /* Dark teal/forest green */
     --text-muted: #5c7272;
     --primary-color: #2d5a5a;
+    --primary-rgb: 45, 90, 90;
     --accent-color: #ffffff;
     --card-bg: #ffffff;
     --border-color: rgba(26, 58, 58, 0.1);

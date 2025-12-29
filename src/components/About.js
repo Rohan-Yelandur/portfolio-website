@@ -2,6 +2,9 @@ import React from 'react';
 import './About.css';
 
 const About = () => {
+  const [showAnimation, setShowAnimation] = React.useState(false);
+  const videoRef = React.useRef(null);
+
   const experiences = [
     {
       role: "Software Development Engineer Intern",
@@ -20,17 +23,43 @@ const About = () => {
     }
   ];
 
+  const handleHookemClick = () => {
+    setShowAnimation(true);
+  };
+
+  const handleVideoEnd = () => {
+    setShowAnimation(false);
+  };
+
   return (
     <section id="about" className="about">
+      {/* Hidden video for preloading */}
+      <video src="/media/3rdDownAnimation.mp4" style={{ display: 'none' }} preload="auto" />
+
+      {showAnimation && (
+        <div className="animation-overlay">
+          <video
+            ref={videoRef}
+            src="/media/3rdDownAnimation.mp4"
+            autoPlay
+            muted={false}
+            onEnded={handleVideoEnd}
+            className="fullscreen-video"
+          />
+          <div className="video-disclaimer">
+            Property of University of Texas Football Creative Media Team
+          </div>
+        </div>
+      )}
       <h2 className="section-title">A little about me.</h2>
       <div className="about-grid">
         <div className="about-left">
           <p className="big-text">
-            I'm currently studying Computer Science at UT Austin <span className="hookem" onClick={() => console.log('Hookem clicked!')}>🤘</span>
+            I'm currently studying Computer Science at UT Austin <span className="hookem" onClick={handleHookemClick}>🤘</span>
           </p>
           <p className="sub-text">
             I conduct reserach on robot learning in the Texas Robotics lab. I frequently
-            compete in hackathons 
+            compete in hackathons
           </p>
 
           <div className="outside-work">
