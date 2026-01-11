@@ -2,6 +2,12 @@
     padding: 100px 20px;
 }
 
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -11,8 +17,8 @@
 
 .project-image-box {
     width: 100%;
-    aspect-ratio: 4/3;
-    border-radius: 40px;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
     overflow: hidden;
     margin-bottom: 24px;
     background: white;
@@ -24,6 +30,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: var(--transition-smooth);
 }
 
@@ -91,4 +98,39 @@
     .project-image-box {
         border-radius: 30px;
     }
+}
+
+.github-snake-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.snake-heading {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.snake-subtext {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.github-snake-container img {
+    width: 100%;
+    /* Force full width of container */
+    max-width: 1200px;
+    /* Allow it to get larger than before */
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: white;
+    /* Optional: helps contrast slightly */
+    padding: 10px;
+    /* Frame effect */
 }

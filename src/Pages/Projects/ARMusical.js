@@ -11,10 +11,10 @@ const ARMusical = () => {
   const project = {
     title: "AR Musical Instrument Platform",
     description: "An augmented-reality platform for playing and learning instruments in the browser.",
-    technologies: ["React", "Three.js", "WebXR", "Node.js"],
+    technologies: ["React", "Three.js", "Tone.js", "WebRTC", "MediaPipe"],
     links: {
-      code: "https://github.com",
-      demo: "https://devpost.com"
+      code: "https://github.com/Rohan-Yelandur/TVGVibeathon",
+      demo: "https://tvg-vibeathon.vercel.app/"
     },
     video: "https://www.youtube.com/embed/mPMlWaZJMw0",
     gallery: ["/media/harmonium_thumbnail.PNG"]
@@ -46,14 +46,6 @@ const ARMusical = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-            </div>
-
-            <div className="gallery-grid">
-              {project.gallery.map((img, index) => (
-                <div key={index} className="gallery-item">
-                  <img src={img} alt={`${project.title} screenshot ${index + 1}`} />
-                </div>
-              ))}
             </div>
           </div>
 

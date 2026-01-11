@@ -41,14 +41,6 @@ const ZipReader = () => {
             <div className="main-image">
               <img src={project.image} alt={project.title} />
             </div>
-
-            <div className="gallery-grid">
-              {project.gallery.map((img, index) => (
-                <div key={index} className="gallery-item">
-                  <img src={img} alt={`${project.title} screenshot ${index + 1}`} />
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="project-info">

@@ -33,8 +33,7 @@
 
 .header.scrolled .nav-list {
     background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(6px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
     padding: 6px 15px;

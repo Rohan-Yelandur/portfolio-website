@@ -65,11 +65,12 @@
     gap: 20px;
 }
 
-.main-image, .video-container {
+.main-image,
+.video-container {
     width: 100%;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     background: #000;
 }
 
@@ -98,7 +99,6 @@
     border-radius: 10px;
     overflow: hidden;
     height: 100px;
-    cursor: pointer;
 }
 
 .gallery-item img {
@@ -168,7 +168,7 @@
     .project-content {
         grid-template-columns: 1fr;
     }
-    
+
     .project-info {
         position: static;
     }
@@ -178,11 +178,11 @@
     .project-header h1 {
         font-size: 2rem;
     }
-    
+
     .project-links {
         flex-direction: column;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;

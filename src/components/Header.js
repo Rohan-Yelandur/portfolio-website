@@ -42,7 +42,7 @@ const Header = () => {
       <nav className="nav">
         <ul className="nav-list">
           <li className="nav-item">
-            <a href="#hero" className={activeSection === 'hero' ? 'active-pill' : ''}>Work</a>
+            <a href="#hero" className={activeSection === 'hero' ? 'active-pill' : ''}>Home</a>
           </li>
           <li className="nav-item">
             <a href="#projects" className={activeSection === 'projects' ? 'active-pill' : ''}>Projects</a>

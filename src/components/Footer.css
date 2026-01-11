@@ -1,6 +1,13 @@
 .footer {
-    padding: 120px 20px 60px;
+    padding: 10px 20px 0;
+    /* Removed bottom padding so pet sits at very edge */
     background: transparent;
+    position: relative;
+    /* Anchor for pet container */
+    overflow: hidden;
+    /* Ensure pet doesn't cause scrollbar when off-screen */
+    padding-bottom: 10px;
+    /* Small buffer */
 }
 
 .footer-container {
@@ -9,21 +16,112 @@
     text-align: center;
 }
 
+
+/* Walking Pet Animation */
+.pet-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 140px;
+    /* Increased size for bigger pug */
+    z-index: 100;
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+.pet-walk {
+    width: auto;
+    position: absolute;
+    left: -150px;
+    /* Start further off screen */
+    animation: walk-cycle linear infinite;
+}
+
+.pet-walk.pug {
+    height: 120px;
+    bottom: -40px;
+    animation-duration: 45s;
+}
+
+.pet-walk.kitten {
+    height: 50px;
+    /* Adjust size */
+    bottom: -1px;
+    /* Adjust vertical position */
+    animation-duration: 50s;
+    /* Slower */
+}
+
+@keyframes walk-cycle {
+    0% {
+        left: -100px;
+        transform: scaleX(1);
+        /* Facing right */
+    }
+
+    45% {
+        left: 100%;
+        transform: scaleX(1);
+    }
+
+    46% {
+        left: 100%;
+        transform: scaleX(-1);
+        /* Turn around */
+    }
+
+    95% {
+        left: -100px;
+        transform: scaleX(-1);
+    }
+
+    96% {
+        left: -100px;
+        transform: scaleX(1);
+        /* Reset face */
+    }
+
+    100% {
+        left: -100px;
+        transform: scaleX(1);
+    }
+}
+
 .footer-title {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     margin-bottom: 60px;
     letter-spacing: -1px;
 }
 
-.footer-title .underline {
-    text-decoration: underline;
-    text-decoration-color: var(--primary-color);
-    text-underline-offset: 8px;
-    text-decoration-thickness: 3px;
+.footer-title .shine {
+    background: linear-gradient(to right,
+            var(--text-color) 20%,
+            var(--primary-color) 50%,
+            var(--text-color) 80%);
+    background-size: 200% auto;
+    color: var(--text-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineText 3s linear infinite;
+    font-weight: 700;
+}
+
+@keyframes shineText {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .footer-links {
     margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
 }
 
 .email-link {
@@ -31,15 +129,17 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    /* Reduced slightly to fit well inline */
     font-weight: 600;
-    margin-bottom: 40px;
     color: var(--text-color);
     transition: var(--transition-smooth);
+    margin-bottom: 0;
+    /* Removing bottom margin to align with social icons */
 }
 
 .footer-icon {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
 }
 
@@ -51,7 +151,7 @@
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .social-icon-img {
@@ -89,5 +189,13 @@
 
     .social-icon-img {
         font-size: 2rem;
+    }
+
+    .pet-walk.pug {
+        animation-duration: 10s;
+    }
+
+    .pet-walk.kitten {
+        animation-duration: 15s;
     }
 }

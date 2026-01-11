@@ -12,6 +12,26 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 80px;
+    align-items: start;
+}
+
+.about-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* Elements inside left column */
+.about-intro {
+    /* No specific grid area needed anymore */
+}
+
+.outside-work {
+    /* No specific grid area needed anymore */
+}
+
+.about-experience {
+    /* No specific grid area needed anymore */
 }
 
 .big-text {
@@ -19,17 +39,6 @@
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 40px;
-}
-
-.sub-text {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.outside-work {
-    margin-top: 60px;
 }
 
 .sub-heading {
@@ -77,6 +86,8 @@
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .exp-tag {
@@ -104,40 +115,52 @@
 .hookem {
     display: inline-block;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    /* Independent scale property allows transition without conflicting with transform animation */
+    scale: 1;
+    transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Persistent gentle wobble */
+    animation: hookem-wobble 1s infinite ease-in-out;
 }
 
 .hookem:hover {
-    transform: scale(1.4);
-    animation: wiggle 0.5s infinite linear;
+    scale: 1.5;
+    /* On hover, we could speed it up or just let it be big and wobbly */
 }
 
-@keyframes wiggle {
-    0% {
-        transform: scale(1.4) rotate(0deg);
-    }
+@keyframes hookem-wobble {
 
-    25% {
-        transform: scale(1.4) rotate(15deg);
+    0%,
+    100% {
+        transform: rotate(-10deg);
     }
 
     50% {
-        transform: scale(1.4) rotate(0deg);
-    }
-
-    75% {
-        transform: scale(1.4) rotate(-15deg);
-    }
-
-    100% {
-        transform: scale(1.4) rotate(0deg);
+        transform: rotate(10deg);
     }
 }
 
 @media (max-width: 968px) {
     .about-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 60px;
+    }
+
+    .about-left-column {
+        display: contents;
+        /* Allows children to be direct flex items of about-grid for reordering */
+    }
+
+    .about-intro {
+        order: 1;
+    }
+
+    .about-experience {
+        order: 2;
+    }
+
+    .outside-work {
+        order: 3;
     }
 
     .section-title {
@@ -149,9 +172,7 @@
         font-size: 1.8rem;
     }
 
-    .outside-work {
-        margin-top: 40px;
-    }
+    /* Removed .outside-work margin override since it's now grid-controlled */
 }
 
 .animation-overlay {
@@ -186,4 +207,77 @@
     padding: 8px 12px;
     border-radius: 4px;
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .fullscreen-video {
+        object-fit: contain;
+        width: 200%;
+        /* scales the video up, cutting off sides */
+        max-width: none;
+    }
+}
+
+/* Experience Dropdown Styles */
+.exp-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.exp-item:hover .exp-role {
+    color: var(--primary-color);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exp-toggle-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.exp-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, margin-top 0.3s ease;
+}
+
+.exp-item.expanded .exp-details {
+    max-height: 500px;
+    /* Large enough to fit content */
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.exp-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exp-details li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.exp-details li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }

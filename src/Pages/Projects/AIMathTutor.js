@@ -11,7 +11,7 @@ const AIMathTutor = () => {
   const project = {
     title: "AI Math Tutor",
     description: "A custom video generation pipeline to create animated and narrated math lessons.",
-    technologies: ["Python", "OpenAI API", "Manim", "FFmpeg"],
+    technologies: ["Python", "React", "FastAPI", "FFmpeg", "Gemini API", "ElevenLabs API"],
     links: {
       code: "https://github.com",
       demo: "https://devpost.com"
@@ -40,14 +40,6 @@ const AIMathTutor = () => {
           <div className="project-media">
             <div className="main-image">
               <img src={project.image} alt={project.title} />
-            </div>
-
-            <div className="gallery-grid">
-              {project.gallery.map((img, index) => (
-                <div key={index} className="gallery-item">
-                  <img src={img} alt={`${project.title} screenshot ${index + 1}`} />
-                </div>
-              ))}
             </div>
           </div>
 
